@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "뉴스 요약 확장 프로그램",
+  "version": "1.0",
+  "description": "뉴스 기사 요약 및 단어 뜻풀이 제공",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
